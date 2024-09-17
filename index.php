@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Leaderboard</title>
+    <title>24h Kula</title>
     <style>
         body {
             background-color: black;
@@ -21,36 +21,40 @@
         th, td {
             padding: 10px;
             text-align: left;
+            height: 7vh;
+            font-size: 6vh;
+        }
+        tr:nth-child(2n+1) {
+            background-color: #111;
+        }
+        tr:nth-child(2n) {
+            background-color: #222;
         }
         th {
-            background-color: #333;
-        }
-        td {
-            background-color: #444;
+            background-color: #101010;
         }
         .message {
-            font-size: 40px; /* Bigger font size */
+            font-size: 40px; 
             text-align: center;
-            padding: 50px; /* More padding */
-            background-color: #ff4444; /* Striking red background */
-            color: white; /* White text */
-            font-weight: bold; /* Bold text */
-            border: 3px solid white; /* Thick white border */
+            padding: 50px;
+            background-color: #ff4444; 
+            color: white; 
+            font-weight: bold; 
+            border: 3px solid white; 
             margin-top: 20px;
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); /* Add some glow effect */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); 
         }
     </style>
 </head>
 <body>
-    <h1>Live Leaderboard</h1>
     <div id="content">
         <table id="leaderboard">
             <thead>
                 <tr>
-                    <th>Position</th>
-                    <th>Racer Number</th>
-                    <th>Racer Name</th>
+                    <th>P</th>
+                    <th>#</th>
+                    <th>Team</th>
                 </tr>
             </thead>
             <tbody>
