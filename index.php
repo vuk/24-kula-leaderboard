@@ -58,7 +58,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Data will be dynamically inserted here -->
+                <!-- Leaderboard here -->
             </tbody>
         </table>
         <div id="message" class="message" style="display: none;"></div>
@@ -67,11 +67,9 @@
     <script>
         async function fetchData() {
             const url = new URL(document.baseURI + '/api-proxy.php');
-            const headers = new Headers();
-            headers.set('Authorization', 'Basic ' + btoa('c25ea964b4b92d9aa10f:'));
 
             try {
-                const response = await fetch(url, { headers: headers });
+                const response = await fetch(url);
                 const data = await response.json();
                 
                 if (data.error) {
@@ -90,11 +88,10 @@
             const messageDiv = document.getElementById('message');
             const table = document.getElementById('leaderboard');
 
-            // Hide the message and show the table
             messageDiv.style.display = 'none';
             table.style.display = 'table';
 
-            tbody.innerHTML = ''; // Clear the existing table
+            tbody.innerHTML = '';
 
             let i = 0;
 
@@ -124,7 +121,6 @@
             const messageDiv = document.getElementById('message');
             const table = document.getElementById('leaderboard');
 
-            // Hide the table and show the message
             table.style.display = 'none';
             messageDiv.style.display = 'block';
             messageDiv.textContent = message;
